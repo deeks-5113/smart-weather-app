@@ -1,0 +1,187 @@
+/* src/App.css */
+
+/* Basic Reset & Font */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom right, #60a5fa, #8b5cf6); /* Gradient background */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  width: 100%;
+}
+
+/* Card Styling */
+.card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem; /* Rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  width: 100%;
+  max-width: 40rem; /* Max width for larger screens */
+  transition: all 0.3s ease-in-out;
+  transform: scale(1); /* Initial scale */
+}
+
+.card:hover {
+  transform: scale(1.02); /* Slight scale on hover */
+}
+
+.card-title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: bold;
+  text-align: center;
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  gap: 1rem; /* gap-4 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .input-section {
+    flex-direction: row; /* Row on larger screens */
+  }
+}
+
+.input-field {
+  flex-grow: 1;
+  padding: 0.75rem; /* p-3 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  outline: none;
+  color: #374151; /* text-gray-700 */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  border-color: #6366f1; /* focus:ring-indigo-500 */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5); /* focus:ring-2 */
+}
+
+.button {
+  background-color: #4f46e5; /* bg-indigo-600 */
+  color: #ffffff;
+  font-weight: 600; /* font-semibold */
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.button:hover {
+  background-color: #4338ca; /* hover:bg-indigo-700 */
+  transform: translateY(-2px); /* hover:-translate-y-1 */
+}
+
+.button:disabled {
+  background-color: #a78bfa; /* bg-indigo-400 */
+  cursor: not-allowed;
+  transform: translateY(0);
+}
+
+/* Error Message */
+.error-message {
+  background-color: #fee2e2; /* bg-red-100 */
+  border: 1px solid #ef4444; /* border-red-400 */
+  color: #b91c1c; /* text-red-700 */
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+}
+
+/* AI Response Box */
+.ai-response-box {
+  background-color: #f0fdf4; /* bg-green-50 */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); /* shadow-inner */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.response-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold;
+  color: #166534; /* text-green-800 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Weather Details Box */
+.weather-details-box {
+  background-color: #eff6ff; /* bg-blue-50 */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); /* shadow-inner */
+}
+
+.weather-details-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  color: #1e40af; /* text-blue-800 */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: 1rem; /* gap-4 */
+  color: #374151; /* text-gray-700 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .weather-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+  }
+}
+
+.weather-item {
+  display: flex;
+  align-items: center;
+}
+
+.weather-item .icon {
+  font-size: 1.25rem; /* text-xl */
+  margin-right: 0.5rem; /* mr-2 */
+}
+
+.weather-item .label {
+  font-weight: 500; /* font-medium */
+}
+
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
